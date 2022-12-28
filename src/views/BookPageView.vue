@@ -1,6 +1,6 @@
 <template>
   <navbar></navbar>
-  <book-information></book-information>
+  <book-information :book="book"></book-information>
 </template>
 
 <script>
@@ -13,15 +13,19 @@ export default defineComponent({
   name: "AuthorView",
   mixins:[endpoints],
   components: { Navbar, BookInformation },
-  data:()=>{
-    bookId:null
-  },
+  data:()=>({
+
+    bookId:null,
+    
+    book:[],
+}),
 
   mounted(){
     this.bookId=this.$route.params.bookId;
   },
-   created(){
-      console.log( this.getBook(2));
+   async created(){
+     this.book=await this.getBook(2);
+     
   }
 });
 </script>

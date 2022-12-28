@@ -27,27 +27,27 @@ export default {
 
         async getBook(bookId) {
             const response = await host.get(bookApi + bookId);
-            return response;
+            return response.data.data;
         },
 
         async getBooks() {
             const response = await host.get(bookApi);
-            return response;
+            return response.data.data;
         },
 
         async getTags() {
             const response = await host.get(tagsApi);
-            return response;
+            return response.data.data;
         },
 
         async getcategories() {
             const response = await host.get(categoriesApi);
-            return response;
+            return response.data.data;
         },
 
         async getcategoriesByTag(tagId) {
             const response = await host.get(booksApi + tagId);
-            return response;
+            return response.data.data;
         },
     }
 };

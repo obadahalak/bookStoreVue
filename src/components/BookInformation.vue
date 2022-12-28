@@ -1,31 +1,30 @@
 <template>
+
     <div class="container ma-8">
         <v-row>
             <v-col cols="8">
-                <h1 class="text-red">Book Name</h1>
+                <h1 class="text-red">{{book.name}}</h1>
                 <div class="informatoin ma-5" style="font-size: 20px; font-family:segoe ui ;">
-                    <p>Category Name</p>
-                    <p>Author Name</p>
+                    <p>{{book.category_name}}</p>
+                    <p>{{book.auther}}</p>
                     <p>500 Page</p>
                     <div><v-rating></v-rating></div>
                 </div>
             </v-col>
             <v-col>
                     <div class="d-flex bg-grey-lighten-4">
-                        <v-img class="bg-white" width="300" :aspect-ratio="2" src="../images/book.png"></v-img>
+                        <v-img class="bg-white" width="300" :aspect-ratio="2" :src="book.coverImage"></v-img>
                     </div>
             </v-col>
         </v-row>
         <br><br>
         <p class="font-weight-bold">OverView</p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio labore ex porro repudiandae cupiditate voluptatem animi! Neque nihil consequuntur facere magni, aliquam possimus odio architecto est quasi? Optio, doloremque suscipit.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptate unde amet illo dolorum earum explicabo, obcaecati tempora voluptatibus cupiditate eaque libero sit voluptas! Consequuntur aspernatur vel explicabo nam perspiciatis!
+          {{book.overview}}
         </p>
         <p class="font-weight-bold">Details</p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio labore ex porro repudiandae cupiditate voluptatem animi! Neque nihil consequuntur facere magni, aliquam possimus odio architecto est quasi? Optio, doloremque suscipit.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptate unde amet illo dolorum earum explicabo, obcaecati tempora voluptatibus cupiditate eaque libero sit voluptas! Consequuntur aspernatur vel explicabo nam perspiciatis!
+          {{book.details}}
         </p>
         <p class="font-weight-bold">List Image</p>
     <v-slide-group v-model="model" class="pa-5" selected-class="bg-success" show-arrows>
@@ -61,3 +60,10 @@
     font-size: 30px;
 }   
 </style>
+<script>
+
+export default {
+  
+  props:{book:Object},
+}
+</script>
