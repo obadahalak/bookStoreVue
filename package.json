@@ -1,0 +1,32 @@
+{
+    "name": "app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "@mdi/font": "^7.1.96",
+        "axios": "^1.2.1",
+        "core-js": "^3.8.3",
+        "install": "^0.13.0",
+        "sass-loader": "^13.2.0",
+        "vue": "^3.2.13",
+        "vue-material-design-icons": "^5.1.2",
+        "vue-router": "^4.1.6",
+        "vuetify": "3.0.5"
+    },
+    "devDependencies": {
+        "@nuxtjs/vuetify": "^1.12.3",
+        "@vue/cli-plugin-babel": "^5.0.8",
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-service": "^5.0.8"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ]
+}
