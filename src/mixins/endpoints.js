@@ -49,5 +49,13 @@ export default {
             const response = await host.get(booksApi + tagId);
             return response.data.data;
         },
+
+
+        async getNewBooksApi() {
+            const response = await host.get(newBooksApi);
+            return response.data.data;
+        },
+
+
     }
 };

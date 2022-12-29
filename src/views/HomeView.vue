@@ -10,7 +10,9 @@ import NavBar from '@/components/NavBar/Navbar.vue';
 import Search from '@/components/Search.vue';
 import cards from "../components/bookCards/Cards.vue";
 import Footer from '@/components/Footer.vue';
+import endpoints from "../mixins/endpoints.js";
 export default {
+  mixins:[endpoints],
   components: {
     NavBar,Search,cards,Footer
   },
@@ -18,65 +20,18 @@ export default {
   
   tags:[{
    id:1,tagName:"newBooks",
-    books:[
-  { 
-           id:   1,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-          { 
-           id: 2,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-          { 
-           id: 3,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-          { 
-           id: 4,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         }
-],
+   books:[],
   },
-{
-id:2, tagName: "Category",
-books:[
-  { 
-           id:   5,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-          { 
-           id: 6,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-          { 
-           id: 7,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         },
-            { 
-           id: 8,
-           name: "bookName4",
-           details: "details-book.....",
-           like: true,
-         }
-],
-}
-  ]    
+  ],
  
  
 }),
+
+
+  created(){
+   this.tags.books= this.getNewBooksApi();
+  //  console.log(this.tags)
+  
+  },
 };
 </script>

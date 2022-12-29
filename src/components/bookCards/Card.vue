@@ -1,4 +1,5 @@
 <template>
+{{tag}}
   <v-col v-for="book in tag.books">
     <v-card outlined tile text="" style="background-color: #7bbea8">
       

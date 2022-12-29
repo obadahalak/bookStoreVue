@@ -8,7 +8,20 @@
                     <p>{{book.category_name}}</p>
                     <p>{{book.auther}}</p>
                     <p>500 Page</p>
-                    <div><v-rating></v-rating></div>
+                    <div>
+                        <v-rating
+              v-model="book.rate"
+              color="yellow darken-3"
+              background-color="grey darken-1"
+              half-increments
+              hover
+              readonly
+              size="30"
+              :empty-icon="emptyIcon"
+              :full-icon="fullIcon"
+              :half-icon="halfIcon"
+            ></v-rating>
+                      </div>
                 </div>
             </v-col>
             <v-col>
@@ -28,8 +41,9 @@
         </p>
         <p class="font-weight-bold">List Image</p>
     <v-slide-group v-model="model" class="pa-5" selected-class="bg-success" show-arrows>
-      <v-slide-group-item v-for="n in 15" :key="n" v-slot="{ isSelected, toggle, selectedClass }">
-        <v-card
+      <v-slide-group-item v-for="images in book.gallaryImage"  v-slot="{ isSelected, toggle, selectedClass }">
+        <v-img
+        :src="images.file"
           color="red"
           :class="['ma-4', selectedClass]"
           height="250"
@@ -45,7 +59,7 @@
               ></v-icon>
             </v-scale-transition>
           </div>
-        </v-card>
+        </v-img>
       </v-slide-group-item>
     </v-slide-group>
     </div>
@@ -64,6 +78,12 @@
 
 export default {
   
+  data:()=>({
+     rating: 3.5,
+    emptyIcon: "mdi-star-outline",
+    fullIcon: "mdi-star",
+    halfIcon: "mdi-star-half",
+  }),
   props:{book:Object},
 }
 </script>

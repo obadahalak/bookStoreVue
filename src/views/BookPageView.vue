@@ -20,11 +20,9 @@ export default defineComponent({
     book:[],
 }),
 
-  mounted(){
-    this.bookId=this.$route.params.bookId;
-  },
+
    async created(){
-     this.book=await this.getBook(2);
+     this.book=await this.getBook(this.$route.params.bookId);
      
   }
 });
