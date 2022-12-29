@@ -8,6 +8,9 @@ const host = axios.create({
 
 
 
+// homePage
+
+const homePageAPi = '/homePage';
 
 ////home Page ////
 const bestRatingApi = '/bestRating';
@@ -54,6 +57,11 @@ export default {
         async getNewBooksApi() {
             const response = await host.get(newBooksApi);
             return response.data.data;
+        },
+
+        async getHomePageApi() {
+            const response = await host.get(homePageAPi);
+            return response.data;
         },
 
 

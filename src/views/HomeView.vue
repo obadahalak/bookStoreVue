@@ -1,7 +1,7 @@
 <template>
 <NavBar></NavBar>
 <search></search>
-<cards :tags="tags" />
+<cards :tags="data" />
 <Footer></Footer>
 </template>
 
@@ -18,19 +18,15 @@ export default {
   },
   data: () => ({
   
-  tags:[{
-   id:1,tagName:"newBooks",
-   books:[],
-  },
-  ],
+  data:null,
  
  
 }),
 
 
-  created(){
-   this.tags.books= this.getNewBooksApi();
-  //  console.log(this.tags)
+ async created(){
+   this.data=await this.getHomePageApi();
+  //  console.log(tags)
   
   },
 };

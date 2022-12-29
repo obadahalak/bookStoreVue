@@ -1,12 +1,12 @@
 <template>
-{{tag}}
-  <v-col v-for="book in tag.books">
+
+  <v-col  v-for="book in tag">
     <v-card outlined tile text="" style="background-color: #7bbea8">
       
       <router-link :to="{name:'BookPage',params:{ bookId : book.id }}">
 
       <v-img 
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+        :src="book.cover_image.file"
         height="200"
         cover
       ></v-img>
@@ -20,7 +20,7 @@
         <template v-slot:append>
           <div class="justify-self-end">
             <v-rating
-              v-model="rating"
+              v-model="book.rating"
               color="yellow darken-3"
               background-color="grey darken-1"
               half-increments
