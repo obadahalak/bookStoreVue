@@ -65,5 +65,13 @@ export default {
         },
 
 
+        async getAuthoresApi() {
+            const response = await host.get(authorsApi);
+            return response.data;
+        },
+
+
+
+
     }
 };

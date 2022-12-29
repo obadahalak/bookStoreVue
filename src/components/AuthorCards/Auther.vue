@@ -1,36 +1,48 @@
 <template>
-  <!-- <v-col v-for="category in categories " :key="categories.id"> -->
-  <v-card rounded="lg" color="#7bbea8">
-    <v-img rounded="xl" :src="category.image" height="200" cover></v-img>
 
-    <v-list-item class="w-100 mb-2 mt-2">
+  
+            <v-img class="  rounded-circle "   :src="auther.image" width="200" cover></v-img>
+
+  <v-card   
+    max-width="344"
+    class=" mx-auto rounded-t-xl px-4" color="#7bbea8">
+
+    <v-list-item class="w-100 d-flex justify-center">
       <template v-slot:prepend>
+<!-- 
         <p
           class="text-sm-subtitle-1 text-xs-caption text-md-h6 text-lg-h5 font-weight-thin"
         >
-          {{ category.name }}
-        </p>
+        
+         
+        </p> -->
       </template>
 
       <template v-slot:append>
         <div>
-          <p class="text-button">{{ category.title }}</p>
+          <p class="text-button">{{ auther.title }}</p>
         </div>
       </template>
     </v-list-item>
 
-    <v-card-text
+    <!-- <v-card-text
       id="style-1"
       class="scrollbar d-flex justify-center"
       style="max-height: 190px"
     >
       <p class="text-body-1">
-        {{category.description}}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
+        reprehenderit voluptatem repellat at nemo unde quia maxime suscipit
+        amet, enim assumenda doloribus neque itaque eligendi nisi quod velit
+        perferendis beatae. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Harum, reprehenderit voluptatem repellat at nemo unde quia maxime
+        suscipit amet, enim assumenda doloribus neque itaque eligendi nisi quod
+        velit perferendis
       </p>
-    </v-card-text>
+    </v-card-text> -->
 
     <v-card-action class="d-flex justify-center mx-2">
-      <p class="text-h6 text-red mb-2">{{category.count_of_books}} Books</p>
+      <p class="text-h6 text-red mb-2">{{auther.countOfBooks}}</p>
     </v-card-action>
   </v-card>
 </template>
@@ -38,9 +50,11 @@
 <script>
 export default {
   props: {
-    category: Object,
+    auther: Object,
   },
-
+  mounted(){
+    console.log("mounted");
+  }
 };
 </script>
 

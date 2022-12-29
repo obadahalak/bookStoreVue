@@ -2,13 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CategoryView from '../views/CategoryView.vue'
 import BooksView from '../views/BooksView.vue'
-import AuthorView from '../views/AuthorView.vue'
+import ProfileAuthorView from '../views/ProfileAuthorView.vue'
 import LogInView from '../views/AuthView/LogInView.vue'
 import ForgetPassowrdView from '../views/AuthView/ForgetPassowrdView.vue'
 import BookPageView from '../views/BookPageView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import SignUpView from '../views/AuthView/SignUpView.vue'
 
+import AutherView from '../views/AuthorView.vue'
 const routes = [{
         path: '/',
         name: 'home',
@@ -48,9 +49,9 @@ const routes = [{
     },
 
     {
-        path: '/AuthorView',
-        name: 'Author',
-        component: AuthorView,
+        path: '/ProfileAuthor',
+        name: 'ProfileAuthor',
+        component: ProfileAuthorView,
         meta: { navBarColor: 'text-red' }
     },
 
@@ -65,6 +66,15 @@ const routes = [{
         path: '/ProfileView',
         name: 'Profile',
         component: ProfileView,
+        meta: { navBarColor: 'text-red' }
+    },
+
+
+
+    {
+        path: '/authors',
+        name: 'Authors',
+        component: AutherView,
         meta: { navBarColor: 'text-red' }
     },
 

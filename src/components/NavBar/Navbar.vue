@@ -15,7 +15,7 @@
       <v-sheet rounded="lg" :class="{navBarColor}" flat class="ma-2 pa-2">Category</v-sheet>
     </router-link>
    
-    <router-link to="/">
+    <router-link :to="{ name:'Authors'}">
       <v-sheet rounded="lg" class="ma-2 pa-2">Authers</v-sheet>
     </router-link>
    

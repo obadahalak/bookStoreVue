@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <v-row class="d-flex justify-center mx-auto pa-2">
+    <v-row justify="start" class="d-flex  mx-auto pa-2">
       
       <!-- <CategoryCard/> -->
-       <v-col v-for="category in categories " :key="categories.id"> 
+       <v-col cols="4" v-for="category in categories " :key="categories.id"> 
       <CategoryCard :category="category" />
     
      </v-col> 

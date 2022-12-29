@@ -56,7 +56,7 @@ export default {
     tag: Object,
   },
   data: () => ({
-    itemLink:'/test',
+
     rating: 3.5,
     emptyIcon: "mdi-star-outline",
     fullIcon: "mdi-star",

@@ -1,22 +1,39 @@
 <template>
-    <navbar></navbar>
-    <AuthorName></AuthorName>
+  <NavBar />
+  <search />
+  <AutherCards :data="authors" />
+ 
+  <Footer />
 </template>
+
+
+<script>
+import NavBar from "@/components/NavBar/Navbar.vue";
+import Search from "@/components/Search.vue";
+import AutherCards from "../components/AuthorCards/Authers.vue";
+import Footer from "@/components/Footer.vue";
+import endpoints from "../mixins/endpoints.js";
+import { computed } from '@vue/runtime-core';
+
+export default {
+  mixins: [endpoints],
+  components: {
+    NavBar,
+    Search,
+    AutherCards,
+    Footer,
+  },
+    data:()=>({
+        authors:[],
+    }),
     
-    <script>
-  import AuthorName from "@/components/AuthorName.vue";
-import Navbar from "@/components/NavBar/Navbar.vue";
-  import { defineComponent } from "vue";  
-    
-    // Components
-    
-    export default defineComponent({
-      name: "AuthorView",
-    
-      components: {
-    Navbar,
-    AuthorName
-},
-    });
-    </script>
-    
+ async created(){
+         this.authors=await this.getAuthoresApi();
+  },
+};
+
+
+</script>
+
+<style>
+</style>
